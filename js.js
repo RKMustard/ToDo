@@ -1,14 +1,13 @@
 // To Add new ToDo item
 window.addEventListener('load', () => {
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
-	const newTodoForm = document.querySelector('#new-todo-form');
 
     // To add new todo list
+	const newTodoForm = document.querySelector('#new-todo-form');
 	newTodoForm.addEventListener('submit', e => {
 		e.preventDefault();
 		const todo = {
-			content: e.target.elements.content.value,
-			done: false,
+			content: e.target.elements.content.value
 		}
 		todos.push(todo);
 		localStorage.setItem('todos', JSON.stringify(todos));
